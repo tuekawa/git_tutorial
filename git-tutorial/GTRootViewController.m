@@ -12,6 +12,8 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor orangeColor];
+
+  self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 @end
