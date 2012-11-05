@@ -24,6 +24,7 @@
 		7123E634164773AC000DF68C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7123E613164773AB000DF68C /* CoreData.framework */; };
 		7123E63C164773AC000DF68C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7123E63A164773AC000DF68C /* InfoPlist.strings */; };
 		7123E63F164773AC000DF68C /* git_tutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E63E164773AC000DF68C /* git_tutorialTests.m */; };
+		7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E64D16477DF1000DF68C /* GTRootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,8 @@
 		7123E63B164773AC000DF68C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		7123E63D164773AC000DF68C /* git_tutorialTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = git_tutorialTests.h; sourceTree = "<group>"; };
 		7123E63E164773AC000DF68C /* git_tutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = git_tutorialTests.m; sourceTree = "<group>"; };
+		7123E64C16477DF1000DF68C /* GTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRootViewController.h; sourceTree = "<group>"; };
+		7123E64D16477DF1000DF68C /* GTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +127,8 @@
 				7123E61F164773AC000DF68C /* GTAppDelegate.m */,
 				7123E627164773AC000DF68C /* git_tutorial.xcdatamodeld */,
 				7123E616164773AB000DF68C /* Supporting Files */,
+				7123E64C16477DF1000DF68C /* GTRootViewController.h */,
+				7123E64D16477DF1000DF68C /* GTRootViewController.m */,
 			);
 			path = "git-tutorial";
 			sourceTree = "<group>";
@@ -274,6 +279,7 @@
 				7123E61C164773AB000DF68C /* main.m in Sources */,
 				7123E620164773AC000DF68C /* GTAppDelegate.m in Sources */,
 				7123E629164773AC000DF68C /* git_tutorial.xcdatamodeld in Sources */,
+				7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -440,6 +446,7 @@
 				7123E644164773AC000DF68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7123E645164773AC000DF68C /* Build configuration list for PBXNativeTarget "git-tutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -448,6 +455,7 @@
 				7123E647164773AC000DF68C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

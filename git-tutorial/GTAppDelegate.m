@@ -7,8 +7,12 @@
 //
 
 #import "GTAppDelegate.h"
+#import "GTRootViewcontroller.h"
 
-@implementation GTAppDelegate
+@implementation GTAppDelegate {
+  UINavigationController *_navigationController;
+  GTRootViewController *_rootViewController;
+}
 
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
@@ -17,7 +21,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+
+    _rootViewController = [[GTRootViewController alloc] initWithNibName:nil bundle:nil];
+    _navigationController = [[UINavigationController alloc] initWithRootViewController:_rootViewController];
+    self.window.rootViewController = _navigationController;
+
     self.window.backgroundColor = [UIColor blueColor];
     [self.window makeKeyAndVisible];
     return YES;
