@@ -27,7 +27,7 @@
 -(void)setHelloButton{
   UIButton *helloButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   helloButton.frame = CGRectMake(0, self.view.frame.size.height-88, self.view.frame.size.width, 44);
-  [helloButton setTitle:@"Button" forState:UIControlStateNormal];
+  [helloButton setTitle:@"Button of Secret" forState:UIControlStateNormal];
   [helloButton addTarget:self action:@selector(tapHello:) forControlEvents:UIControlEventTouchDown];
   [self.view addSubview:helloButton];
 }
