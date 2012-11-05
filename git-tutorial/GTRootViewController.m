@@ -13,7 +13,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor orangeColor];
+  self.view.backgroundColor = [UIColor brownColor];
 
   _testView = [UIView new];
   _testView.frame = CGRectMake(self.view.center.x - 100,100,200,200);
