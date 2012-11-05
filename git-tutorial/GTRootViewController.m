@@ -12,7 +12,9 @@
 
 @end
 
-@implementation GTRootViewController
+@implementation GTRootViewController{
+  UIView *_testView;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,9 +27,15 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+  [super viewDidLoad];
+  
+  self.view.backgroundColor = [UIColor orangeColor];
 
-    self.view.backgroundColor = [UIColor orangeColor];
+  _testView = [UIView new];
+  _testView.frame = CGRectMake(self.view.center.x - 100,100,200,200);
+  _testView.backgroundColor = [UIColor blueColor];
+  [self.view addSubview:_testView];
+
 }
 
 - (void)didReceiveMemoryWarning
