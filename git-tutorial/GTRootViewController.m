@@ -13,9 +13,9 @@
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor orangeColor];
   
-  UILabel* _label = [[UILabel alloc]initWithFrame:CGRectMake(100,100, 300,300)];
-  _label.text = @"TB001";
-  [self.view addSubview:_label];
+  UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(100,100, 300,300)];
+  label.text = @"TB001";
+  [self.view addSubview:label];
   
   UIButton *changeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   changeButton.frame = CGRectMake(0, self.view.frame.size.height-120, self.view.frame.size.width/2, 44);
