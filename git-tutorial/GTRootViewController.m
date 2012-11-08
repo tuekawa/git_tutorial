@@ -12,7 +12,7 @@
 
 - (void)viewDidLoad {
   [super viewDidLoad];
-  self.view.backgroundColor = [UIColor orangeColor];
+  self.view.backgroundColor = [UIColor yellowColor];
   
   UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(100,100, 30,100)];
   label.text = @"TB001";
@@ -45,7 +45,7 @@
   self.view.backgroundColor = [UIColor redColor];
 }
 -(void)upChangeBgColor:(UIButton *)button{
-  self.view.backgroundColor = [UIColor orangeColor];
+  self.view.backgroundColor = [UIColor yellowColor];
 }
 
 @end
