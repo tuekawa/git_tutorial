@@ -57,7 +57,7 @@
 }
 
 -(void)tapHello:(UIButton *)button{
-  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello YAMASHITA" message:nil delegate:nil cancelButtonTitle:@"了解" otherButtonTitles:nil];
+  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Hello YOSHINAGA" message:nil delegate:nil cancelButtonTitle:@"了解" otherButtonTitles:nil];
   [alert show];
 }
 
