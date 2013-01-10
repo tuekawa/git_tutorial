@@ -1,7 +1,9 @@
 #import "GTRootViewController.h"
+#import <CoreMotion/CoreMotion.h>
 
 @implementation GTRootViewController {
   UIView *_testView;
+  CMMotionManager *_motionManager;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
@@ -40,6 +42,46 @@
                                         initWithTarget:self
                                         action:@selector(tapTestView:)];
   [_testView addGestureRecognizer:tapGesture];
+  
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+  [super viewDidAppear:animated];
+  float ballSize = 44;
+  
+  UIButton *ball = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+  ball.tintColor = [UIColor grayColor];
+  ball.frame = CGRectMake(0, 0, ballSize, ballSize);
+  [self.view addSubview:ball];
+
+  _motionManager = [[CMMotionManager alloc] init];
+  if (_motionManager.accelerometerAvailable) {
+  [_motionManager setAccelerometerUpdateInterval:0.01f];
+    [_motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue]
+                                         withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
+                                           dispatch_async(dispatch_get_main_queue(), ^{
+                                             float x = accelerometerData.acceleration.x*10;
+                                             float y = -accelerometerData.acceleration.y*10;
+                                             float ballX = ball.center.x;
+                                             float ballY = ball.center.y;
+                                             ballX += x;
+                                             ballY += y;
+                                             if (ballX < ballSize/2 ){
+                                               ballX = ballSize/2;
+                                             }
+                                             if(ballX > 320 - ballSize/2){
+                                               ballX = 320 - ballSize/2;
+                                               
+                                             }if(ballY < ballSize/2){
+                                               ballY = ballSize/2;
+                                             }
+                                             if(ballY > self.view.frame.size.height - ballSize/2) {
+                                               ballY = self.view.frame.size.height - ballSize/2;
+                                             }
+                                             ball.center = CGPointMake(ballX, ballY);
+                                           });
+                                         }];
+  }
 }
 
 -(void)setHelloButton{

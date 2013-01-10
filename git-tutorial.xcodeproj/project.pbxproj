@@ -25,6 +25,7 @@
 		7123E63C164773AC000DF68C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7123E63A164773AC000DF68C /* InfoPlist.strings */; };
 		7123E63F164773AC000DF68C /* git_tutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E63E164773AC000DF68C /* git_tutorialTests.m */; };
 		7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E64D16477DF1000DF68C /* GTRootViewController.m */; };
+		E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		7123E63E164773AC000DF68C /* git_tutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = git_tutorialTests.m; sourceTree = "<group>"; };
 		7123E64C16477DF1000DF68C /* GTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRootViewController.h; sourceTree = "<group>"; };
 		7123E64D16477DF1000DF68C /* GTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRootViewController.m; sourceTree = "<group>"; };
+		E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */,
 				7123E60E164773AB000DF68C /* UIKit.framework in Frameworks */,
 				7123E610164773AB000DF68C /* Foundation.framework in Frameworks */,
 				7123E612164773AB000DF68C /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		7123E60C164773AB000DF68C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */,
 				7123E60D164773AB000DF68C /* UIKit.framework */,
 				7123E60F164773AB000DF68C /* Foundation.framework */,
 				7123E611164773AB000DF68C /* CoreGraphics.framework */,
