@@ -10,9 +10,10 @@
   UITextField *_textField;
   UILabel *_label;
   NSMutableArray *_connectingPeers;
+  UILabel *_peerInfoLabel;
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -20,13 +21,12 @@
     return self;
 }
 
-- (void)viewDidLoad
+-(void)viewDidLoad
 {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor whiteColor];
   _session = [[GKSession alloc] initWithSessionID:@"session id" displayName:nil sessionMode:GKSessionModePeer];
   _session.delegate = self;
-  _session.available = YES;
   [_session setAvailable:YES];
   [_session setDataReceiveHandler:self withContext:nil];
   
@@ -37,6 +37,8 @@
   _textField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
   _textField.textAlignment = NSTextAlignmentLeft;
   _textField.delegate = self;
+  _textField.returnKeyType = UIReturnKeySend;
+  _textField.keyboardAppearance = UIKeyboardAppearanceAlert;
   [self.view addSubview:_textField];
   
   _label = [[UILabel alloc] initWithFrame:CGRectMake(10, 120, 300, 44)];
@@ -47,10 +49,21 @@
   _label.adjustsLetterSpacingToFitWidth = YES;
   [self.view addSubview:_label];
   
+  _peerInfoLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 200, 300, 200)];
+  _peerInfoLabel.backgroundColor = [UIColor blueColor];
+  _peerInfoLabel.textColor = [UIColor whiteColor];
+  _peerInfoLabel.minimumScaleFactor = 1;
+  _peerInfoLabel.adjustsFontSizeToFitWidth = YES;
+  _peerInfoLabel.adjustsLetterSpacingToFitWidth = YES;
+  _peerInfoLabel.numberOfLines = 0;
+  [self.view addSubview:_peerInfoLabel];
+  
   UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction
                                                                         target:self
                                                                         action:@selector(tapLeftBarItem)];
   self.navigationItem.leftBarButtonItem = item;
+  
+  [self updatePeerInfo];
 }
 
 -(void)session:(GKSession *)session didFailWithError:(NSError *)error{
@@ -85,12 +98,13 @@
   if (state == GKPeerStateDisconnected) {
     NSLog(@"%@とは切断した",peerID);
   }
+  [self updatePeerInfo];
 }
 
 -(void)receiveData:(NSData *)data fromPeer:(NSString *)peer inSession:(GKSession *)session context:(void*)context{
   NSLog(@"%@からデータ取得",peer);
   NSString *str = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-  NSString *byPeer = [NSString stringWithFormat:@" by %@",peer];
+  NSString *byPeer = [NSString stringWithFormat:@" by %@",[session displayNameForPeer:peer]];
   _label.text = [str stringByAppendingString:byPeer];
 }
 
@@ -113,8 +127,29 @@
  }];
 }
 
-- (void)didReceiveMemoryWarning
-{
+-(void)updatePeerInfo{
+  NSArray *connectedPeers = [_session peersWithConnectionState:GKPeerStateConnected];
+  NSArray *connectingPeers = [_session peersWithConnectionState:GKPeerStateConnecting];
+  NSArray *connectablePerrs = [_session peersWithConnectionState:GKPeerStateAvailable];
+  if (connectablePerrs.count) {
+    _peerInfoLabel.text = [NSString stringWithFormat:@"%@と接続できます",[connectablePerrs objectAtIndex:0]];
+  }
+  if (connectingPeers.count) {
+    _peerInfoLabel.text = [NSString stringWithFormat:@"%@と接続中です",[connectingPeers objectAtIndex:0]];
+  }
+  if (connectedPeers.count == 0) {
+    _peerInfoLabel.text = @"接続先を探しています";
+    return;
+  }
+  NSString *infoStr = [NSString stringWithFormat:@"接続数:%d\n",connectedPeers.count];
+  for (NSString *peer in connectedPeers) {
+    NSString *displayName = [_session displayNameForPeer:peer];
+    infoStr = [infoStr stringByAppendingString:[NSString stringWithFormat:@"ID:%@ Name:%@\n",peer,displayName]];
+  }
+  _peerInfoLabel.text = infoStr;
+}
+
+-(void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
