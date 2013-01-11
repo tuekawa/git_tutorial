@@ -26,6 +26,8 @@
 		7123E63F164773AC000DF68C /* git_tutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E63E164773AC000DF68C /* git_tutorialTests.m */; };
 		7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E64D16477DF1000DF68C /* GTRootViewController.m */; };
 		E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */; };
+		E03B09D3169E7E9700C67A24 /* GTHaraguchiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */; };
+		E03B09D6169E7F9A00C67A24 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03B09D5169E7F9A00C67A24 /* GameKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,9 @@
 		7123E64C16477DF1000DF68C /* GTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRootViewController.h; sourceTree = "<group>"; };
 		7123E64D16477DF1000DF68C /* GTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRootViewController.m; sourceTree = "<group>"; };
 		E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		E03B09D1169E7E9700C67A24 /* GTHaraguchiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTHaraguchiViewController.h; sourceTree = "<group>"; };
+		E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTHaraguchiViewController.m; sourceTree = "<group>"; };
+		E03B09D5169E7F9A00C67A24 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03B09D6169E7F9A00C67A24 /* GameKit.framework in Frameworks */,
 				E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */,
 				7123E60E164773AB000DF68C /* UIKit.framework in Frameworks */,
 				7123E610164773AB000DF68C /* Foundation.framework in Frameworks */,
@@ -114,6 +120,7 @@
 		7123E60C164773AB000DF68C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E03B09D5169E7F9A00C67A24 /* GameKit.framework */,
 				E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */,
 				7123E60D164773AB000DF68C /* UIKit.framework */,
 				7123E60F164773AB000DF68C /* Foundation.framework */,
@@ -133,6 +140,8 @@
 				7123E616164773AB000DF68C /* Supporting Files */,
 				7123E64C16477DF1000DF68C /* GTRootViewController.h */,
 				7123E64D16477DF1000DF68C /* GTRootViewController.m */,
+				E03B09D1169E7E9700C67A24 /* GTHaraguchiViewController.h */,
+				E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */,
 			);
 			path = "git-tutorial";
 			sourceTree = "<group>";
@@ -284,6 +293,7 @@
 				7123E620164773AC000DF68C /* GTAppDelegate.m in Sources */,
 				7123E629164773AC000DF68C /* git_tutorial.xcdatamodeld in Sources */,
 				7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */,
+				E03B09D3169E7E9700C67A24 /* GTHaraguchiViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +391,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "git-tutorial/git-tutorial-Prefix.pch";
 				INFOPLIST_FILE = "git-tutorial/git-tutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -392,6 +403,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "git-tutorial/git-tutorial-Prefix.pch";
 				INFOPLIST_FILE = "git-tutorial/git-tutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
