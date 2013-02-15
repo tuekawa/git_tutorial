@@ -1,5 +1,6 @@
 #import "GTRootViewController.h"
 #import <CoreMotion/CoreMotion.h>
+#import "GTHaraguchiViewController.h"
 
 @implementation GTRootViewController {
   UIView *_testView;
@@ -52,6 +53,7 @@
   UIButton *ball = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   ball.tintColor = [UIColor grayColor];
   ball.frame = CGRectMake(0, 0, ballSize, ballSize);
+  [ball addTarget:self action:@selector(tapMovingButton) forControlEvents:UIControlEventTouchDown];
   [self.view addSubview:ball];
 
   _motionManager = [[CMMotionManager alloc] init];
@@ -113,6 +115,7 @@
   testViewLabel.minimumScaleFactor = 1.0f;
   testViewLabel.adjustsFontSizeToFitWidth = YES;
   testViewLabel.adjustsLetterSpacingToFitWidth = YES;
+  
   testViewLabel.font = [UIFont boldSystemFontOfSize:40];
   testViewLabel.text = @"Tap";
   [_testView addSubview:testViewLabel];
@@ -131,4 +134,14 @@
     }];
   }];
 }
+
+-(void)tapMovingButton{
+  [_motionManager stopAccelerometerUpdates];
+  GTHaraguchiViewController *vc = [GTHaraguchiViewController new];
+  UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:vc];
+  [self presentViewController:nc animated:NO completion:^{
+  }];
+}
+
+
 @end
