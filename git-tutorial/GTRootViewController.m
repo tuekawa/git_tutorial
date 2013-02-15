@@ -1,6 +1,7 @@
 #import "GTRootViewController.h"
 #import <CoreMotion/CoreMotion.h>
 #import "GTHaraguchiViewController.h"
+#import "GTKawaTableViewController.h"
 
 @implementation GTRootViewController {
   UIView *_testView;
@@ -17,11 +18,11 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   self.view.backgroundColor = [UIColor orangeColor];
-  
+
   UILabel* label = [[UILabel alloc]initWithFrame:CGRectMake(100,100, 300,300)];
   label.text = @"TB001";
   [self.view addSubview:label];
-  
+
   UIButton *changeButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   changeButton.frame = CGRectMake(0, self.view.frame.size.height-120, self.view.frame.size.width/2, 44);
 
@@ -36,20 +37,30 @@
   [self.view addSubview:_testView];
   [self setHelloButton];
 
-  self.navigationItem.rightBarButtonItem = self.editButtonItem;
+  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"kawaTableVC"
+                                                                    style:UIBarButtonItemStyleBordered
+                                                                    target:self
+                                                                    action:@selector(kawaTableVC)];
 
   [self setLabelToTestView];
   UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc]
                                         initWithTarget:self
                                         action:@selector(tapTestView:)];
   [_testView addGestureRecognizer:tapGesture];
-  
+
 }
+
+- (void)kawaTableVC {
+  GTKawaTableViewController *kawaTVC = [[GTKawaTableViewController alloc] initWithStyle:UITableViewStylePlain];
+  [self.navigationController pushViewController:kawaTVC animated:YES];
+}
+
+
 
 -(void)viewDidAppear:(BOOL)animated{
   [super viewDidAppear:animated];
   float ballSize = 44;
-  
+
   UIButton *ball = [UIButton buttonWithType:UIButtonTypeRoundedRect];
   ball.tintColor = [UIColor grayColor];
   ball.frame = CGRectMake(0, 0, ballSize, ballSize);
@@ -73,7 +84,7 @@
                                              }
                                              if(ballX > 320 - ballSize/2){
                                                ballX = 320 - ballSize/2;
-                                               
+
                                              }if(ballY < ballSize/2){
                                                ballY = ballSize/2;
                                              }
@@ -115,7 +126,7 @@
   testViewLabel.minimumScaleFactor = 1.0f;
   testViewLabel.adjustsFontSizeToFitWidth = YES;
   testViewLabel.adjustsLetterSpacingToFitWidth = YES;
-  
+
   testViewLabel.font = [UIFont boldSystemFontOfSize:40];
   testViewLabel.text = @"Tap";
   [_testView addSubview:testViewLabel];
