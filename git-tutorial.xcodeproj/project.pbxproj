@@ -25,6 +25,9 @@
 		7123E63C164773AC000DF68C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7123E63A164773AC000DF68C /* InfoPlist.strings */; };
 		7123E63F164773AC000DF68C /* git_tutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E63E164773AC000DF68C /* git_tutorialTests.m */; };
 		7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7123E64D16477DF1000DF68C /* GTRootViewController.m */; };
+		CBA0138516CDF873004FEE97 /* GTKawaTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CBA0138416CDF873004FEE97 /* GTKawaTableViewController.m */; };
+		CBA0138716CDFAF5004FEE97 /* kawa.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = CBA0138616CDFAF5004FEE97 /* kawa.jpeg */; };
+		CBA0138916CE0112004FEE97 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBA0138816CE0112004FEE97 /* QuartzCore.framework */; };
 		E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */; };
 		E03B09D3169E7E9700C67A24 /* GTHaraguchiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */; };
 		E03B09D6169E7F9A00C67A24 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E03B09D5169E7F9A00C67A24 /* GameKit.framework */; };
@@ -64,6 +67,10 @@
 		7123E63E164773AC000DF68C /* git_tutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = git_tutorialTests.m; sourceTree = "<group>"; };
 		7123E64C16477DF1000DF68C /* GTRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTRootViewController.h; sourceTree = "<group>"; };
 		7123E64D16477DF1000DF68C /* GTRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTRootViewController.m; sourceTree = "<group>"; };
+		CBA0138316CDF873004FEE97 /* GTKawaTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTKawaTableViewController.h; sourceTree = "<group>"; };
+		CBA0138416CDF873004FEE97 /* GTKawaTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTKawaTableViewController.m; sourceTree = "<group>"; };
+		CBA0138616CDFAF5004FEE97 /* kawa.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = kawa.jpeg; sourceTree = "<group>"; };
+		CBA0138816CE0112004FEE97 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E00EB7A9169D75FC00D207F8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		E03B09D1169E7E9700C67A24 /* GTHaraguchiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTHaraguchiViewController.h; sourceTree = "<group>"; };
 		E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTHaraguchiViewController.m; sourceTree = "<group>"; };
@@ -75,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBA0138916CE0112004FEE97 /* QuartzCore.framework in Frameworks */,
 				E03B09D6169E7F9A00C67A24 /* GameKit.framework in Frameworks */,
 				E00EB7AA169D75FC00D207F8 /* CoreMotion.framework in Frameworks */,
 				7123E60E164773AB000DF68C /* UIKit.framework in Frameworks */,
@@ -101,6 +109,8 @@
 		7123E5FE164773AB000DF68C = {
 			isa = PBXGroup;
 			children = (
+				CBA0138816CE0112004FEE97 /* QuartzCore.framework */,
+				CBA0138616CDFAF5004FEE97 /* kawa.jpeg */,
 				7123E615164773AB000DF68C /* git-tutorial */,
 				7123E637164773AC000DF68C /* git-tutorialTests */,
 				7123E60C164773AB000DF68C /* Frameworks */,
@@ -142,6 +152,8 @@
 				7123E64D16477DF1000DF68C /* GTRootViewController.m */,
 				E03B09D1169E7E9700C67A24 /* GTHaraguchiViewController.h */,
 				E03B09D2169E7E9700C67A24 /* GTHaraguchiViewController.m */,
+				CBA0138316CDF873004FEE97 /* GTKawaTableViewController.h */,
+				CBA0138416CDF873004FEE97 /* GTKawaTableViewController.m */,
 			);
 			path = "git-tutorial";
 			sourceTree = "<group>";
@@ -255,6 +267,7 @@
 				7123E622164773AC000DF68C /* Default.png in Resources */,
 				7123E624164773AC000DF68C /* Default@2x.png in Resources */,
 				7123E626164773AC000DF68C /* Default-568h@2x.png in Resources */,
+				CBA0138716CDFAF5004FEE97 /* kawa.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +307,7 @@
 				7123E629164773AC000DF68C /* git_tutorial.xcdatamodeld in Sources */,
 				7123E64E16477DF1000DF68C /* GTRootViewController.m in Sources */,
 				E03B09D3169E7E9700C67A24 /* GTHaraguchiViewController.m in Sources */,
+				CBA0138516CDF873004FEE97 /* GTKawaTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
